@@ -57,11 +57,11 @@ h2{font-size:clamp(40px,5vw,70px);line-height:1.02;letter-spacing:-.02em;margin-
 
 /* work */
 .work{display:grid;grid-template-columns:1.1fr 1fr;gap:8%;align-items:center}
-.gallery{position:relative;height:640px}
-.gallery figure{position:absolute;margin:0;width:52%;box-shadow:0 26px 50px #0008;border-radius:3px;overflow:hidden}
-.g1{left:0;top:0;transform:rotate(-3deg)}
-.g2{left:30%;top:9%;z-index:2}
-.g3{right:0;bottom:0;transform:rotate(4deg);width:44%!important}
+.gallery{position:relative;height:580px}
+.gallery figure{position:absolute;margin:0;width:46%;box-shadow:0 26px 50px #0008;border-radius:3px;overflow:hidden}
+.g1{left:0;top:2%;transform:rotate(-5deg)}
+.g2{left:27%;top:24%;z-index:2}
+.g3{right:0;top:0;transform:rotate(5deg)}
 .work-copy p{color:#c4cad2}
 .tag{display:inline-block;border:1px solid #ffffff40;border-radius:999px;padding:7px 13px;font:600 10.5px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:#d6cfc2;margin-bottom:22px}
 .also{display:flex;gap:20px;align-items:center;margin-top:34px;padding-top:28px;border-top:1px solid var(--line)}

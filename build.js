@@ -18,7 +18,7 @@ sips(`-Z 256 "${SRC}/logo.png" --out "${OUT}/assets/logo.png"`);
 sips(`-Z 64 "${SRC}/logo.png" --out "${OUT}/assets/favicon.png"`);
 sips(`-Z 180 "${SRC}/logo.png" --out "${OUT}/assets/apple-touch-icon.png"`);
 sips(`-s format jpeg -s formatOptions 80 -Z 1100 "${SRC}/concept.png" --out "${OUT}/assets/concept.jpg"`);
-for (const f of fs.readdirSync(SRC).filter((f) => f.startsWith('cookbook-'))) {
+for (const f of fs.readdirSync(SRC).filter((f) => /^(cookbook|cover)-/.test(f))) {
   sips(`-s format jpeg -s formatOptions 80 -Z 1100 "${SRC}/${f}" --out "${OUT}/assets/${f}"`);
 }
 if (fs.existsSync(path.join(SRC, 'og.jpg'))) fs.copyFileSync(path.join(SRC, 'og.jpg'), path.join(OUT, 'assets/og.jpg'));
@@ -35,7 +35,7 @@ const T = {
     lead: 'You’ve built a real connection with your audience. We turn what you know into an ebook they’ll keep coming back to — written, designed and ready to sell.',
     ctaMain: 'Start a partnership', ctaSub: 'How it works',
     fine: 'No upfront creation fee. A shared venture, from the first page.',
-    strip: ['Your voice at the centre', 'Editorial writing & design', 'Net revenue shared 50/50', 'English & Spanish'],
+    strip: ['Your voice at the centre', 'Editorial writing & design', 'Net revenue shared 50/50', 'Ebooks in any language'],
     introEy: 'More than another download', introH: ['Something your audience', 'can come back to.'],
     introP: ['The questions in your comments. The advice you give again and again. The experience that makes your perspective yours.', 'We shape it into a focused, useful ebook — from the first outline to the final layout — so it feels like a natural extension of you and your work.'],
     procEy: 'The process', procH: ['You bring the perspective.', 'We bring it to the page.'],
@@ -44,10 +44,10 @@ const T = {
       ['Create it together', 'You share your content: recipes, methods, photos, experience. We handle structure, editing and editorial design. You review every proof and approve the final PDF.'],
       ['Give it a home', 'We prepare the product page and sell it on Whop. You introduce it to your community, and your share of every sale is credited to your own Whop balance.'],
     ],
-    workEy: 'Design concept', workH: ['A cookbook,', 'made to be used.'],
-    workTag: 'Illustrative concept · not client work',
-    workP: 'An example of how a creator’s everyday recipes can become a calm, editorial ebook: full-page photography, recipes readable at a glance, a pantry guide and a shopping list. Every ebook gets its own identity, built around the creator’s brand.',
-    workNote: 'Concept with demo recipes and illustrative stock photography (Unsplash). Final books use the creator’s own approved texts and photos.',
+    workEy: 'Design concepts', workH: ['Any topic.', 'Any language.'],
+    workTag: 'Illustrative concepts · not client work',
+    workP: 'A Spanish cookbook, an English houseplant guide, an Italian slow-travel guide: three subjects, three languages, three visual identities. Each ebook is designed from scratch around the creator’s brand, voice and audience — never a one-size-fits-all template.',
+    workNote: 'Concepts with demo content and illustrative stock photography (Unsplash). Final books use the creator’s own approved texts and photos.',
     work2H: 'Not just food.', work2P: 'Guides, planners and workbooks for wellbeing, family life, creative skills or money — wherever your audience keeps asking you the same questions.',
     partEy: 'Shared work · Shared upside', partH: ['A partnership,', 'not a production invoice.'],
     partP: 'We invest our time in writing, editing and design. You bring your expertise, your feedback and your audience. There is no upfront creation fee.',
@@ -62,13 +62,13 @@ const T = {
       ['Will I approve everything before it goes on sale?', 'Always. Nothing is published, priced or changed without your written approval of the PDF, the price and the product page.'],
       ['Do you use AI tools?', 'We may use AI tools to support layout and editing, always with human review, and only with your written permission for any unpublished content. We never imitate your voice or image.'],
       ['How do payments work?', 'We sell through Whop and set up its revenue-share feature, so your share of each sale goes straight to your Whop balance. You also get a monthly summary of sales and deductions.'],
-      ['Do you work internationally?', 'Yes. We are based in Italy and work in English and Spanish with creators around the world, as long as Whop supports payouts in your country.'],
+      ['Do you work internationally?', 'Yes. We are based in Italy and create ebooks in any language, with creators all over the world — as long as Whop supports payouts in your country.'],
     ],
     contactEy: 'Let’s start a conversation', contactH: ['You have something to share.', 'Let’s make room for it.'],
     contactP: 'Tell us what you create, who you help and the idea you’ve been thinking about. We’ll reply within a few days to explore whether an ebook makes sense together.',
     contactBtn: 'Email us', mailSubject: 'Partnership — ebook idea',
     mailBody: 'Hi Pagevory,\n\nMy name is … and I create content about …\nMy audience: …\nThe ebook idea I have in mind: …\n\nThanks!',
-    footer: 'Independent creative publishing · Italy · English & Spanish',
+    footer: 'Independent creative publishing · Italy · Ebooks in any language',
     concept: 'Concept',
   }
 };
@@ -154,9 +154,9 @@ const page = (t) => {
   <section class="section" id="work">
     <div class="wrap work reveal">
       <div class="gallery">
-        <figure class="g1"><img src="${pre}assets/cookbook-photo.jpg" alt="${t.lang === 'en' ? 'Concept cookbook: full-page recipe photograph' : 'Recetario conceptual: fotografía de receta a página completa'}" loading="lazy" width="550" height="778"></figure>
-        <figure class="g2"><img src="${pre}assets/cookbook-recipe.jpg" alt="${t.lang === 'en' ? 'Concept cookbook: recipe page with ingredients and method' : 'Recetario conceptual: página de receta con ingredientes y elaboración'}" loading="lazy" width="550" height="778"></figure>
-        <figure class="g3"><img src="${pre}assets/cookbook-pantry.jpg" alt="${t.lang === 'en' ? 'Concept cookbook: pantry guide' : 'Recetario conceptual: guía de despensa'}" loading="lazy" width="550" height="778"></figure>
+        <figure class="g1"><img src="${pre}assets/cover-plants.jpg" alt="Concept cover in English: The Gentle Jungle, a beginner’s guide to houseplants" loading="lazy" width="550" height="778"></figure>
+        <figure class="g2"><img src="${pre}assets/cookbook-cover.jpg" alt="Concept cover in Spanish: Cocina sin prisa, a quick and easy cookbook" loading="lazy" width="550" height="778"></figure>
+        <figure class="g3"><img src="${pre}assets/cover-liguria.jpg" alt="Concept cover in Italian: Cinque Terre a passo lento, a slow-travel guide" loading="lazy" width="550" height="778"></figure>
       </div>
       <div class="work-copy">
         <p class="eyebrow">${t.workEy}</p>
