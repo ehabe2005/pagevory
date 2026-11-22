@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pagevory.com/sitemap.xml
