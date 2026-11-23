@@ -43,6 +43,7 @@ h1{font-size:clamp(58px,7.4vw,112px);line-height:.95;letter-spacing:-.025em;marg
 
 /* sections */
 .section{padding:120px 0}
+.section.wrap{padding-left:6%;padding-right:6%}
 h2{font-size:clamp(40px,5vw,70px);line-height:1.02;letter-spacing:-.02em;margin-bottom:30px}
 .intro{display:grid;grid-template-columns:1fr 1fr;gap:10%;align-items:end}
 .intro p{color:#c4cad2;font-size:17px}
@@ -100,13 +101,43 @@ details p{color:#c4cad2;margin:14px 0 0;font-size:15.5px}
 
 @media (max-width:880px){
   .links a:not(.btn){display:none}
+  .nav{padding:14px 5%}
+  .wrap,.section.wrap{padding-left:24px;padding-right:24px}
   .hero,.intro,.work,.partnership{grid-template-columns:1fr}
-  .hero{min-height:0;padding-top:40px;gap:30px}
-  .hero-art{height:440px}
-  .steps{grid-template-columns:1fr;gap:28px}
-  .gallery{height:460px}
-  .section{padding:80px 0}
-  .strip{font-size:10px;gap:10px 16px}
+  .section{padding:84px 0}
+  h2{font-size:clamp(36px,10vw,48px)}
+  /* centred mobile layout */
+  .hero,.intro,.light .wrap,.work-copy,.partnership,.faq>.eyebrow,.faq>h2,.contact,.foot{text-align:center}
+  .hero{min-height:0;padding-top:44px;padding-bottom:56px;gap:44px}
+  h1{font-size:clamp(50px,14vw,68px);margin-bottom:22px}
+  .lead,.intro p,.work-copy p,.partnership p{margin-left:auto;margin-right:auto;max-width:520px}
+  .actions{flex-direction:column;align-items:center;gap:12px;margin:28px 0 18px}
+  .actions .btn{width:100%;max-width:320px;justify-content:center}
+  .hero-art{width:100%;max-width:340px;height:420px;margin:0 auto}
+  .pg{width:64%}
+  .pg.back{right:0;top:0}
+  .pg.front{left:0;bottom:0}
+  .badge{left:50%;top:auto;bottom:-14px;transform:translateX(-50%);z-index:3}
+  .strip{flex-direction:column;gap:8px;font-size:10.5px;padding:20px 24px}
+  .strip i{display:none}
+  .intro{gap:10px}
+  .steps{grid-template-columns:1fr;gap:34px;margin-top:40px}
+  .steps li{padding-top:22px}
+  .steps p{max-width:440px;margin:0 auto}
+  .work{gap:28px}
+  .gallery{width:100%;max-width:340px;height:330px;margin:0 auto}
+  .tag{font-size:9.5px}
+  .also{flex-direction:column;text-align:center;gap:14px}
+  .also img{width:110px}
+  .partnership{gap:36px}
+  .split{font-size:clamp(84px,26vw,120px)}
+  .terms{text-align:center}
+  details{padding:20px 0}
+  summary{font-size:21px}
+  .contact{padding:90px 24px}
+  .contact .btn{width:100%;max-width:320px;justify-content:center}
+  .eyebrow{letter-spacing:.16em;font-size:11px;margin-bottom:16px}
+  .foot{flex-direction:column;justify-content:center;gap:10px;padding:30px 24px}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}.reveal{opacity:1;transform:none}}
 </style></head><body><main class="contact" style="min-height:100vh;display:flex;flex-direction:column;justify-content:center"><p class="eyebrow">404</p><h2>This page isn’t written yet.<br><em>Let’s go back to the start.</em></h2><p><a class="btn" href="/">Pagevory ↗</a></p></main></body></html>
